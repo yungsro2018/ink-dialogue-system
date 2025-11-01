@@ -69,7 +69,7 @@ public class CharacterController2D : MonoBehaviour
     private void HandleHorizontalMovement()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        rb.velocity = new Vector2(moveDirection.x * runSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveDirection.x * runSpeed, rb.linearVelocity.y);
     }
 
     private void HandleJumping()
@@ -78,7 +78,7 @@ public class CharacterController2D : MonoBehaviour
         if (isGrounded && jumpPressed)
         {
             isGrounded = false;
-            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpSpeed);
         }
     }
 
